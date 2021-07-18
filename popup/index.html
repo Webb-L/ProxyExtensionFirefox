@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>设置代理</title>
+    <link rel="stylesheet" href="/css/mdui.min.css">
+</head>
+<body>
+<header class="mdui-appbar mdui-m-b-2">
+    <div class="mdui-toolbar">
+        <span class="mdui-typo-title">设置代理</span>
+    </div>
+</header>
+<main class="mdui-container-fluid mdui-m-b-1">
+    <div class="mdui-card">
+        <ul class="mdui-list">
+
+            <li class="mdui-list-item mdui-ripple item">
+                <i class="mdui-list-item-icon mdui-icon material-icons">not_interested</i>
+                <div class="mdui-list-item-content no_proxy">不使用代理服务器</div>
+                <label class="mdui-radio">
+                    <input type="radio" name="select_proxy" value="none"/>
+                    <i class="mdui-radio-icon"></i>
+                </label>
+            </li>
+
+            <li class="mdui-list-item mdui-ripple item">
+                <i class="mdui-list-item-icon mdui-icon material-icons">wb_auto</i>
+                <div class="mdui-list-item-content auto_proxy">自动检测此网络的代理设置</div>
+                <label class="mdui-radio">
+                    <input type="radio" name="select_proxy" value="autoDetect"/>
+                    <i class="mdui-radio-icon"></i>
+                </label>
+            </li>
+
+            <li class="mdui-list-item mdui-ripple item">
+                <i class="mdui-list-item-icon mdui-icon material-icons">donut_large</i>
+                <div class="mdui-list-item-content system_proxy">使用系统代理设置</div>
+                <label class="mdui-radio">
+                    <input type="radio" name="select_proxy" value="system"/>
+                    <i class="mdui-radio-icon"></i>
+                </label>
+            </li>
+
+            <li class="mdui-list-item mdui-ripple" id="manual">
+                <i class="mdui-list-item-icon mdui-icon material-icons">format_list_bulleted</i>
+                <div class="mdui-list-item-content config_proxy">手动配置代理</div>
+                <label class="mdui-switch">
+                    <input type="checkbox"/>
+                    <i class="mdui-switch-icon"></i>
+                </label>
+            </li>
+
+            <li id="manual_list">
+                <div class="mdui-m-l-5 mdui-m-r-2 mdui-m-b-2">
+                    <div class="mdui-list">
+
+                    </div>
+                </div>
+                <a href="./proxy_list/index.html">
+                    <button id="add" class="mdui-btn mdui-btn-icon mdui-center mdui-m-b-1 mdui-m-t-1">
+                        <i class="mdui-icon material-icons">add</i>
+                    </button>
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+</main>
+<script src="/js/mdui.min.js"></script>
+<script src="/js/public.js"></script>
+<script src="/js/language.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

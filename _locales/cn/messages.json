@@ -1,0 +1,14 @@
+{
+  "authorName": {
+    "message": "Webb",
+    "description": "Webb"
+  },
+  "extensionName": {
+    "message": "代理扩展",
+    "description": "代理扩展"
+  },
+  "extensionDescription": {
+    "message": "“代理扩展”的功能和火狐浏览器代理功能是一样，但是“扩展扩展”可以创建多个手工配置代理方便您切换代理。",
+    "description": "“代理扩展”的功能和火狐浏览器代理功能是一样，但是“扩展扩展”可以创建多个手工配置代理方便您切换代理。"
+  }
+}

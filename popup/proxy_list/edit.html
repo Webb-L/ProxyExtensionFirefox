@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>编辑手动配置代理</title>
+    <link rel="stylesheet" href="/css/mdui.min.css">
+    <link rel="stylesheet" href="css/create.css">
+</head>
+<body class="mdui-appbar-with-toolbar mdui-p-t-5">
+<header class="mdui-appbar mdui-m-b-2 mdui-appbar-fixed" style="background:rgba(255,255,255,0.8);">
+    <div class="mdui-toolbar">
+        <a href="index.html" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">arrow_back</i></a>
+        <span class="mdui-typo-title">编辑手动配置代理</span>
+        <div class="mdui-toolbar-spacer"></div>
+    </div>
+</header>
+
+<main class="mdui-container mdui-m-t-1">
+    <div class="mdui-textfield">
+        <input class="mdui-textfield-input autoConfigUrl" type="text" name="autoConfigUrl" placeholder="autoConfigUrl"/>
+        <div class="mdui-textfield-helper autoConfigUrlDescription">用于配置代理的 URL。</div>
+    </div>
+
+    <label class="mdui-switch">
+        <span class="autoLogin">autoLogin：</span>
+        <input type="checkbox" name="autoLogin"/>
+        <i class="mdui-switch-icon"></i>
+    </label>
+    <p class="helper mdui-text-color-white-disabled autoLoginDescription">如果保存了密码，则不提示进行身份验证。 默认为 false.</p>
+
+    <div class="mdui-textfield">
+        <input class="mdui-textfield-input ftp" type="text" name="ftp" placeholder="ftp"/>
+        <div class="mdui-textfield-helper ftpDescription">FTP 代理的地址。 可以包含端口。</div>
+    </div>
+
+    <div class="mdui-textfield">
+        <input class="mdui-textfield-input http" type="text" name="http" placeholder="http"/>
+        <div class="mdui-textfield-helper httpDescription">HTTP 代理的地址。 可以包含端口。</div>
+    </div>
+
+    <label class="mdui-switch">
+        <span class="httpProxyAll">httpProxyAll：</span>
+        <input type="checkbox" name="httpProxyAll"/>
+        <i class="mdui-switch-icon"></i>
+    </label>
+    <p class="helper mdui-text-color-white-disabled httpProxyAllDescription">对所有协议使用 HTTP 代理服务器。 默认为 false.</p>
+
+    <div class="mdui-textfield">
+        <input class="mdui-textfield-input passthrough" type="text" name="passthrough" placeholder="passThrough"/>
+        <div class="mdui-textfield-helper passthroughDescription">不应代理的主机的逗号分隔列表。 默认为“本地主机，127.0.0.1”。</div>
+    </div>
+
+    <label class="mdui-switch">
+        <span class="proxyDNS">proxyDNS：</span>
+        <input type="checkbox" name="proxyDNS"/>
+        <i class="mdui-switch-icon"></i>
+    </label>
+    <div class="helper mdui-text-color-white-disabled proxyDNSDescription">对所有协议使用 HTTP 代理服务器。 默认为 false.</div>
+
+    <div class="mdui-textfield">
+        <input class="mdui-textfield-input socks" type="text" name="socks" placeholder="socks"/>
+        <div class="mdui-textfield-helper socksDescription">SOCKS 代理的地址。 可以包含端口。</div>
+    </div>
+
+    <div class="mdui-textfield">
+        <input class="mdui-textfield-input socksVersion" type="number" name="socksVersion" placeholder="socksVersion"/>
+        <div class="mdui-textfield-helper socksVersionDescription">SOCKS 代理的版本。 可能是 4 或 5。默认为 5。</div>
+    </div>
+
+    <div class="mdui-textfield">
+        <input class="mdui-textfield-input ssl" type="text" name="ssl" placeholder="ssl"/>
+        <div class="mdui-textfield-helper sslDescription">SSL 代理的地址。 可以包含端口。</div>
+    </div>
+</main>
+
+<div class="mdui-divider mdui-m-t-1 mdui-m-b-1"></div>
+<footer class="mdui-m-t-1 mdui-m-b-1 mdui-m-l-1 mdui-m-r-1 mdui-container mdui-center">
+    <button id="save_config" class="mdui-btn mdui-btn-block mdui-ripple">保存配置</button>
+</footer>
+
+<script src="/js/mdui.min.js"></script>
+<script src="/js/public.js"></script>
+<script src="/js/language.js"></script>
+<script src="js/edit.js" type="application/javascript"></script>
+</body>
+</html>
