@@ -91,8 +91,7 @@ const Language = {
                     saveSuccess: "保存成功！",
                 },
             }
-        },
-        "en": {}
+        }
     },
     setTransition: function (ele, message) {
         document.querySelector(ele).innerText = message
