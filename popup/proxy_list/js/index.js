@@ -3,9 +3,11 @@ const list = JSON.parse(localStorage.getItem("list"))
 const params = location.search.match(/page=\d+/)
 const page = params ? Number(params[0] ? params[0].split("=")[1] : 0) : 0
 list.reverse()
-const language = Language
-const lang = language.languages[navigator.language]
-initLanguage()
+const lang = Language.languages[navigator.language]
+try {
+    initLanguage();
+} catch (e) {
+}
 initTable();
 initFooter();
 

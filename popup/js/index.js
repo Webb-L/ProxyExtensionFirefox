@@ -1,6 +1,9 @@
 window.setProxy = json => browser.proxy.settings.set({value: json});
 
-initLanguage();
+try {
+    initLanguage();
+} catch (e) {
+}
 initData();
 
 const mduiList = getElement("#manual_list .mdui-list");
