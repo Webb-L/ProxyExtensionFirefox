@@ -1,4 +1,7 @@
-initTransition();
+try {
+    initTransition();
+} catch (e) {
+}
 
 let config = {}
 getElement("#save_config").onclick = () => {
@@ -16,16 +19,16 @@ getElement("#save_config").onclick = () => {
     if (localStorage.getItem("list") === null) localStorage.setItem("list", "[]")
     const list = JSON.parse(localStorage.getItem("list"))
 
-    mdui.prompt(lang.popup.create.inputName,
+    mdui.prompt(lang ? lang.popup.create.inputName : "Please enter a name",
         function (value) {
             if (value === "") {
                 mdui.snackbar({
-                    message: lang.popup.create.notNullName,
+                    message: lang ? lang.popup.create.notNullName : "Name is required!",
                     position: 'right-top'
                 });
             } else if (value.length > 25) {
                 mdui.snackbar({
-                    message: lang.popup.create.nameMaxLength,
+                    message: lang ? lang.popup.create.nameMaxLength : "The length of the name cannot exceed 25 characters!",
                     position: 'right-top'
                 });
             } else {
@@ -33,11 +36,13 @@ getElement("#save_config").onclick = () => {
                 config['id'] = new Date().getTime()
                 list.push(config)
                 localStorage.setItem("list", JSON.stringify(list))
-                location.reload()
                 mdui.snackbar({
-                    message: lang.popup.create.saveSuccess,
+                    message: lang ? lang.popup.create.saveSuccess : "Saved successfully",
                     position: 'right-top'
                 });
+                setInterval(() => {
+                    location.reload()
+                }, 1500)
             }
         }
     );
@@ -48,6 +53,7 @@ getElement("#save_config").onclick = () => {
  */
 const language = Language
 const lang = language.languages[navigator.language]
+
 function initTransition() {
     const language = Language
     const lang = language.languages[navigator.language]
