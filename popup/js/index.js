@@ -65,20 +65,28 @@ function initData() {
  * 初始化手动配置代理服务列表
  */
 function initManualConfigList() {
-    let listItem = ``
     list.forEach((item, index) => {
         if (item.use !== null && item.use === true) {
-            listItem += `
-                <label class="mdui-list-item mdui-ripple item">
-                    <div class="mdui-radio">
-                        <input type="radio" name="select_proxy" value="${index}"/>
-                        <i class="mdui-radio-icon"></i>
-                    </div>
-                    <div class="mdui-list-item-content">${item.name}</div>
-                </label>`
+            const label = document.createElement("label")
+            label.className = "mdui-list-item mdui-ripple item"
+            const div = document.createElement("div")
+            div.className = "mdui-radio"
+            const input = document.createElement("input")
+            input.type = "radio"
+            input.name = "select_proxy"
+            input.value = index.toString()
+            div.appendChild(input)
+            const icon = document.createElement("i")
+            icon.className = "mdui-radio-icon"
+            div.appendChild(icon)
+            label.appendChild(div)
+            const itemName = document.createElement("div")
+            itemName.className = "mdui-list-item-content"
+            itemName.innerText = item.name
+            label.appendChild(itemName)
+            mduiList.appendChild(label)
         }
     })
-    mduiList.innerHTML = listItem
 }
 
 /**
