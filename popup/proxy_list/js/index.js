@@ -35,39 +35,136 @@ function initLanguage() {
 }
 
 /**
+ * 创建操作按钮。
+ * @param item
+ * @returns {{btnGroup: HTMLDivElement, itemAction: HTMLTableDataCellElement}}
+ */
+function createAction(item) {
+    const itemAction = document.createElement("td")
+    const btnGroup = document.createElement("div")
+    btnGroup.className = "mdui-btn-group"
+
+    const btnUse = document.createElement("button")
+    btnUse.type = "button"
+    btnUse.id = item.id
+    btnUse.className = `mdui-btn use ${item.use ? 'mdui-hidden' : ''}`
+    const useIcon = document.createElement("i")
+    useIcon.className = "mdui-icon material-icons"
+    useIcon.innerText = "vertical_align_top"
+    btnUse.appendChild(useIcon)
+    btnGroup.appendChild(btnUse)
+
+    const btnUnUse = document.createElement("button")
+    btnUnUse.type = "button"
+    btnUnUse.id = item.id
+    btnUnUse.className = `mdui-btn unUse ${item.use ? '' : 'mdui-hidden'}`
+    const unUseIcon = document.createElement("i")
+    unUseIcon.className = "mdui-icon material-icons"
+    unUseIcon.innerText = "vertical_align_bottom"
+    btnUnUse.appendChild(unUseIcon)
+    btnGroup.appendChild(btnUnUse)
+
+    const btnEdit = document.createElement("button")
+    btnEdit.type = "button"
+    btnEdit.id = item.id
+    btnEdit.className = `mdui-btn edit`
+    const editIcon = document.createElement("i")
+    editIcon.className = "mdui-icon material-icons"
+    editIcon.innerText = "edit"
+    btnEdit.appendChild(editIcon)
+    btnGroup.appendChild(btnEdit)
+
+    const btnDelete = document.createElement("button")
+    btnDelete.type = "button"
+    btnDelete.id = item.id
+    btnDelete.className = `mdui-btn delete`
+    const deleteIcon = document.createElement("i")
+    deleteIcon.className = "mdui-icon material-icons"
+    deleteIcon.innerText = "delete"
+    btnDelete.appendChild(deleteIcon)
+    btnGroup.appendChild(btnDelete)
+    return {itemAction, btnGroup};
+}
+
+/**
  * 初始化表格
  */
 function initTable() {
-    let tbody = ``
     for (let i = (page * 6); i < (page * 6) + 6; i++) {
         const item = list[i]
         if (item === undefined) continue
-        tbody += `
-            <tr>
-                <td>${(Number(i) + 1)}</td>
-                <td class="mdui-table-col-numeric">${resultData(item.name)}</td>
-                <td class="mdui-table-col-numeric">${resultData(item.use)}</td>
-                <td class="mdui-table-col-numeric">${resultData(item.autoConfigUrl)}</td>
-                <td class="mdui-table-col-numeric">${resultData(item.autoLogin)}</td>
-                <td class="mdui-table-col-numeric">${resultData(item.ftp)}</td>
-                <td class="mdui-table-col-numeric">${resultData(item.http)}</td>
-                <td class="mdui-table-col-numeric">${resultData(item.httpProxyAll)}</td>
-                <td class="mdui-table-col-numeric">${resultData(item.passthrough)}</td>
-                <td class="mdui-table-col-numeric">${resultData(item.proxyDNS)}</td>
-                <td class="mdui-table-col-numeric">${resultData(item.socks)}</td>
-                <td class="mdui-table-col-numeric">${resultData(item.socksVersion)}</td>
-                <td class="mdui-table-col-numeric">${resultData(item.ssl)}</td>
-                <td>
-                    <div class="mdui-btn-group">
-                        <button type="button" id="${item.id}" class="mdui-btn use ${item.use ? 'mdui-hidden' : ''}"><i class="mdui-icon material-icons">vertical_align_top</i></button>
-                        <button type="button" id="${item.id}" class="mdui-btn unUse ${item.use ? '' : 'mdui-hidden'}"><i class="mdui-icon material-icons">vertical_align_bottom</i></button>
-                        <button type="button" id="${item.id}" class="mdui-btn edit"><i class="mdui-icon material-icons">edit</i></button>
-                        <button type="button" id="${item.id}" class="mdui-btn delete"><i class="mdui-icon material-icons">delete</i></button>
-                    </div>
-                </td>
-            </tr>`
+        const tr = document.createElement("tr")
+        const index = document.createElement("td")
+        index.innerText = Number(i) + 1
+        tr.appendChild(index)
+
+        const itemName = document.createElement("td")
+        itemName.className = "mdui-table-col-numeric"
+        itemName.innerText = resultData(item.name)
+        tr.appendChild(itemName)
+
+        const itemUse = document.createElement("td")
+        itemUse.className = "mdui-table-col-numeric"
+        itemUse.innerText = resultData(item.use)
+        tr.appendChild(itemUse)
+
+        const itemAutoConfigUrl = document.createElement("td")
+        itemAutoConfigUrl.className = "mdui-table-col-numeric"
+        itemAutoConfigUrl.innerText = resultData(item.autoConfigUrl)
+        tr.appendChild(itemAutoConfigUrl)
+
+        const itemAutoLogin = document.createElement("td")
+        itemAutoLogin.className = "mdui-table-col-numeric"
+        itemAutoLogin.innerText = resultData(item.autoLogin)
+        tr.appendChild(itemAutoLogin)
+
+        const itemFTP = document.createElement("td")
+        itemFTP.className = "mdui-table-col-numeric"
+        itemFTP.innerText = resultData(item.ftp)
+        tr.appendChild(itemFTP)
+
+        const itemHTTP = document.createElement("td")
+        itemHTTP.className = "mdui-table-col-numeric"
+        itemHTTP.innerText = resultData(item.http)
+        tr.appendChild(itemHTTP)
+
+        const itemHttpProxyAll = document.createElement("td")
+        itemHttpProxyAll.className = "mdui-table-col-numeric"
+        itemHttpProxyAll.innerText = resultData(item.httpProxyAll)
+        tr.appendChild(itemHttpProxyAll)
+
+        const itemPassthrough = document.createElement("td")
+        itemPassthrough.className = "mdui-table-col-numeric"
+        itemPassthrough.innerText = resultData(item.passthrough)
+        tr.appendChild(itemPassthrough)
+
+        const itemProxyDNS = document.createElement("td")
+        itemProxyDNS.className = "mdui-table-col-numeric"
+        itemProxyDNS.innerText = resultData(item.proxyDNS)
+        tr.appendChild(itemProxyDNS)
+
+        const itemSocks = document.createElement("td")
+        itemSocks.className = "mdui-table-col-numeric"
+        itemSocks.innerText = resultData(item.socks)
+        tr.appendChild(itemSocks)
+
+        const itemSocksVersion = document.createElement("td")
+        itemSocksVersion.className = "mdui-table-col-numeric"
+        itemSocksVersion.innerText = resultData(item.socksVersion)
+        tr.appendChild(itemSocksVersion)
+
+        const itemSSL = document.createElement("td")
+        itemSSL.className = "mdui-table-col-numeric"
+        itemSSL.innerText = resultData(item.ssl)
+        tr.appendChild(itemSSL)
+
+        const {itemAction, btnGroup} = createAction(item);
+
+        itemAction.appendChild(btnGroup)
+        tr.appendChild(itemAction)
+        getElement("tbody").appendChild(tr)
     }
-    getElement("tbody").innerHTML = tbody
+
     initTableEvent();
 }
 
@@ -79,18 +176,11 @@ function initTableEvent() {
         let count = 1
         list.forEach(item => {
             if (item.use) count++
-            if (item.id === Number(this.id) && (count <= 5)) item.use = true
+            item.use = true
         })
-        if (count <= 5) {
-            list.reverse()
-            localStorage.setItem("list", JSON.stringify(list))
-            location.reload()
-        } else {
-            mdui.snackbar({
-                message: lang.popup.index.maxShowLength,
-                position: "right-top"
-            })
-        }
+        list.reverse()
+        localStorage.setItem("list", JSON.stringify(list))
+        location.reload()
     })
 
     document.querySelectorAll(".unUse").forEach(ele => ele.onclick = function () {
@@ -115,24 +205,45 @@ function initTableEvent() {
         list.forEach((item, i) => {
             if (item.id === proxyId) index = i
         })
-        mdui.dialog({
-            title: lang.popup.index.isDelete.replace("$name", list[index].name),
-            content: lang.popup.index.isDeleteTips,
-            buttons: [
-                {
-                    text: lang.public.cancel
-                },
-                {
-                    text: lang.public.confirm,
-                    onClick: function () {
-                        list.splice(index, 1)
-                        list.reverse()
-                        localStorage.setItem("list", JSON.stringify(list))
-                        location.reload()
+        try {
+            mdui.dialog({
+                title: lang.popup.index.isDelete.replace("$name", list[index].name),
+                content: lang.popup.index.isDeleteTips,
+                buttons: [
+                    {
+                        text: lang.public.cancel
+                    },
+                    {
+                        text: lang.public.confirm,
+                        onClick: function () {
+                            list.splice(index, 1)
+                            list.reverse()
+                            localStorage.setItem("list", JSON.stringify(list))
+                            location.reload()
+                        }
                     }
-                }
-            ]
-        });
+                ]
+            });
+        } catch (e) {
+            mdui.dialog({
+                title: "Do you want to delete $name?".replace("$name", list[index].name),
+                content: "Tip: it cannot be retrieved after deletion.",
+                buttons: [
+                    {
+                        text: "cancel"
+                    },
+                    {
+                        text: "confirm",
+                        onClick: function () {
+                            list.splice(index, 1)
+                            list.reverse()
+                            localStorage.setItem("list", JSON.stringify(list))
+                            location.reload()
+                        }
+                    }
+                ]
+            });
+        }
     })
 }
 
@@ -141,13 +252,48 @@ function initTableEvent() {
  */
 function initFooter() {
     const maxPage = Math.floor(list.length / 6)
-    getElement("footer").innerHTML = `
-        <a href="?page=0" class="mdui-btn mdui-hidden-xs"><i class="mdui-icon material-icons">first_page</i></a>
-        <a href="?page=${(page - 1) <= -1 ? page : page - 1}" class="mdui-btn mdui-hidden-xs"><i class="mdui-icon material-icons">keyboard_arrow_left</i></a>
-        <button class="mdui-btn" id="count" disabled>${(page + 1)}/${maxPage + 1}</button>
-        <a href="?page=${(page + 1) <= maxPage ? page + 1 : page}" class="mdui-btn mdui-hidden-xs"><i class="mdui-icon material-icons">keyboard_arrow_right</i></a>
-        <a href="?page=${maxPage}" class="mdui-btn mdui-hidden-xs"><i class="mdui-icon material-icons">last_page</i></a>
-`
+    const iconFirst = document.createElement("i")
+    iconFirst.className = "mdui-icon material-icons"
+    const firstPage = document.createElement("a")
+    firstPage.href = "?page=0"
+    firstPage.className = "mdui-btn mdui-hidden-xs"
+    iconFirst.innerText = "first_page"
+    firstPage.appendChild(iconFirst)
+    getElement("footer").appendChild(firstPage)
+
+    const iconNext = document.createElement("i")
+    iconNext.className = "mdui-icon material-icons"
+    const nextPage = document.createElement("a")
+    nextPage.href = `?page=${(page - 1) <= -1 ? page : page - 1}`
+    nextPage.className = "mdui-btn mdui-hidden-xs"
+    iconNext.innerText = "keyboard_arrow_left"
+    nextPage.appendChild(iconNext)
+    getElement("footer").appendChild(nextPage)
+
+    const indexPage = document.createElement("button")
+    indexPage.className = "mdui-btn"
+    indexPage.id = "count"
+    indexPage.disabled = true
+    indexPage.innerText = `${(page + 1)}/${maxPage + 1}`
+    getElement("footer").appendChild(indexPage)
+
+    const iconPrev = document.createElement("i")
+    iconPrev.className = "mdui-icon material-icons"
+    const prevPage = document.createElement("a")
+    prevPage.href = `?page=${(page + 1) <= maxPage ? page + 1 : page}`
+    prevPage.className = "mdui-btn mdui-hidden-xs"
+    iconPrev.innerText = "keyboard_arrow_right"
+    prevPage.appendChild(iconPrev)
+    getElement("footer").appendChild(prevPage)
+
+    const iconLast = document.createElement("i")
+    iconLast.className = "mdui-icon material-icons"
+    const lastPage = document.createElement("a")
+    lastPage.href = `?page=${maxPage}`
+    lastPage.className = "mdui-btn mdui-hidden-xs"
+    iconLast.innerText = "last_page"
+    lastPage.appendChild(iconLast)
+    getElement("footer").appendChild(lastPage)
 }
 
 /**
