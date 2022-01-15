@@ -6,11 +6,25 @@ try {
 }
 initData();
 
+let modeShowStateConfig = localStorage.getItem("modeShowState")
+if (modeShowStateConfig === null) {
+    modeShowStateConfig = JSON.stringify({
+        "no_proxy": true,
+        "auto_proxy": true,
+        "system_proxy": true,
+        "config_proxy": true
+    })
+    localStorage.setItem("modeShowState", modeShowStateConfig)
+}
+const modeShowState = JSON.parse(modeShowStateConfig)
+
 const mduiList = getElement("#manual_list .mdui-list");
 const list = JSON.parse(localStorage.getItem("list")) !== null ?
     JSON.parse(localStorage.getItem("list")) : [];
 initManualConfigList();
 
+getElement("#manual").style.display = modeShowState.config_proxy ? "flex" : "none"
+getElement("#manual_list").style.display = modeShowState.config_proxy ? "flex" : "none"
 getElement("#manual").onclick = function () {
     const input = getElement("input", this)
     input.checked = !input.checked
@@ -37,9 +51,22 @@ document.querySelectorAll("#manual_list .item").forEach(ele => {
 /**
  * 获取所有item
  */
-document.querySelectorAll("li.item").forEach(ele => {
+document.querySelectorAll("li.item").forEach((ele, index) => {
     const input = getElement("input", ele)
     input.checked = localStorage.getItem("use") === input.value
+    console.log(modeShowState);
+    switch (index) {
+        case 0:
+            ele.style.display = modeShowState.no_proxy ? "flex" : "none"
+            break;
+        case 1:
+            ele.style.display = modeShowState.auto_proxy ? "flex" : "none"
+            break;
+        case 2:
+            ele.style.display = modeShowState.system_proxy ? "flex" : "none"
+            break;
+    }
+
     ele.onclick = () => {
         input.checked = true
         let proxySettings = {proxyType: input.value};
