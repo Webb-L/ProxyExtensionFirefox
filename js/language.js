@@ -14,6 +14,10 @@ const Language = {
                     config_proxy: "手动配置代理",
                 },
             },
+            settings: {
+                title: "设置",
+                showState: "显示状态"
+            },
             popup: {
                 index: {
                     title: "手动配置代理列表",

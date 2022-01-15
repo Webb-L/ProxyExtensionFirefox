@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Settings</title>
+    <link rel="stylesheet" href="/mdui/1.0.1/css/mdui.min.css">
+</head>
+<body>
+<header class="mdui-appbar mdui-m-b-2">
+    <div class="mdui-toolbar">
+        <a href="index.html" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">arrow_back</i></a>
+        <span class="mdui-typo-title">Settings</span>
+        <div class="mdui-toolbar-spacer"></div>
+    </div>
+</header>
+<main class="mdui-container-fluid">
+    <h3 class="mdui-card-header-title show-state">Display state</h3>
+
+    <div class="mdui-table-fluid">
+        <div class="mdui-card">
+            <ul class="mdui-list">
+                <li class="mdui-list-item mdui-ripple item">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">not_interested</i>
+                    <div class="mdui-list-item-content no_proxy">No proxy server</div>
+                    <label class="mdui-switch">
+                        <input type="checkbox" checked id="no_proxy"/>
+                        <i class="mdui-switch-icon"></i>
+                    </label>
+                </li>
+
+                <li class="mdui-list-item mdui-ripple item">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">wb_auto</i>
+                    <div class="mdui-list-item-content auto_proxy">Automatically detect proxy settings for this network</div>
+                    <label class="mdui-switch">
+                        <input type="checkbox" checked id="auto_proxy"/>
+                        <i class="mdui-switch-icon"></i>
+                    </label>
+                </li>
+
+                <li class="mdui-list-item mdui-ripple item">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">donut_large</i>
+                    <div class="mdui-list-item-content system_proxy">Use system proxy settings</div>
+                    <label class="mdui-switch">
+                        <input type="checkbox" checked id="system_proxy"/>
+                        <i class="mdui-switch-icon"></i>
+                    </label>
+                </li>
+
+                <li class="mdui-list-item mdui-ripple">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">format_list_bulleted</i>
+                    <div class="mdui-list-item-content config_proxy">Manually configure the proxy</div>
+                    <label class="mdui-switch">
+                        <input type="checkbox" checked id="config_proxy"/>
+                        <i class="mdui-switch-icon"></i>
+                    </label>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</main>
+
+<footer class="mdui-m-t-1 mdui-m-b-1 mdui-m-l-1 mdui-m-r-1"></footer>
+
+<script src="/mdui/1.0.1/js/mdui.min.js"></script>
+<script src="/js/public.js"></script>
+<script src="/js/language.js"></script>
+<script src="js/settings.js"></script>
+</body>
+</html>
