@@ -24,7 +24,7 @@ const list = JSON.parse(localStorage.getItem("list")) !== null ?
 initManualConfigList();
 
 getElement("#manual").style.display = modeShowState.config_proxy ? "flex" : "none"
-getElement("#manual_list").style.display = modeShowState.config_proxy ? "flex" : "none"
+getElement("#manual_list").style.display = modeShowState.config_proxy ? "block" : "none"
 getElement("#manual").onclick = function () {
     const input = getElement("input", this)
     input.checked = !input.checked
