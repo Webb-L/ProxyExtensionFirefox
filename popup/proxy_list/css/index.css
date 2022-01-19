@@ -2,3 +2,7 @@ footer {
     display: flex;
     justify-content: center;
 }
+
+.mdui-btn-group .mdui-btn i {
+    filter: invert(1);
+}
