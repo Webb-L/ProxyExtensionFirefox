@@ -13,6 +13,10 @@
 		<img src="https://img.shields.io/amo/v/proxyextension.svg" alt="mozilla add-on" />
 	</a>
 	<br>
+	<a href="LICENSE">
+		<img src="https://img.shields.io/github/license/Webb-L/ProxyExtensionFirefox" alt="license" />
+	</a>	
+	<br>
 	<br>
 	<a href="docs/README-CN.md">中文</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp<a href="docs/README-FA.md">فارسی</a>
 </div>
