@@ -1,6 +1,6 @@
 <div align="center">
 	<p>
-		<a href="https://addons.mozilla.org/en-US/firefox/addon/proxyextension/">
+		<a href="README.md">
 			<img src="icons/border-48.png" width="48" alt="Proxy Extension" />
 		</a>
 	</p>
