@@ -14,7 +14,5 @@
 	</a>
 	<br>
 	<br>
-	<a href="docs/README-CN.md">中文</a>
-	<br>
-	<a href="docs/README-FA.md">فارسی</a>
+	<a href="docs/README-CN.md">中文</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp<a href="docs/README-FA.md">فارسی</a>
 </div>
