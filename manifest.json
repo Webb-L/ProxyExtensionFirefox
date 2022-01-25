@@ -5,7 +5,7 @@
   "name": "__MSG_extensionName__",
   "description": "__MSG_extensionDescription__",
   "icons": {
-    "48": "icons/twotone_language_white_48d.png"
+    "48": "icons/twotone_language_white_48dp.png"
   },
   "permissions": [
     "activeTab",
