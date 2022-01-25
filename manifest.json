@@ -1,11 +1,11 @@
 {
   "manifest_version": 2,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "__MSG_authorName__",
   "name": "__MSG_extensionName__",
   "description": "__MSG_extensionDescription__",
   "icons": {
-    "48": "icons/border-48.png"
+    "48": "icons/twotone_language_white_48d.png"
   },
   "permissions": [
     "activeTab",
@@ -14,9 +14,17 @@
     "<all_urls>"
   ],
   "browser_action": {
-    "default_icon": "icons/border-48.png",
+    "browser_style": true,
+    "default_icon": "icons/twotone_language_white_48dp.png",
     "default_title": "__MSG_extensionName__",
-    "default_popup": "popup/index.html"
+    "default_popup": "popup/index.html",
+    "theme_icons": [
+      {
+        "dark": "icons/twotone_language_black_48dp.png",
+        "light": "icons/twotone_language_white_48dp.png",
+        "size": 32
+      }
+    ]
   },
   "browser_specific_settings": {
     "gecko": {
