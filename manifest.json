@@ -5,7 +5,7 @@
   "name": "__MSG_extensionName__",
   "description": "__MSG_extensionDescription__",
   "icons": {
-    "48": "icons/twotone_language_black_48dp.png"
+    "48": "icons/twotone_language_white_48dp.png"
   },
   "permissions": [
     "activeTab",
@@ -15,7 +15,7 @@
   ],
   "browser_action": {
     "browser_style": true,
-    "default_icon": "icons/twotone_language_black_48dp.png",
+    "default_icon": "icons/twotone_language_white_48dp.png",
     "default_title": "__MSG_extensionName__",
     "default_popup": "popup/index.html",
     "theme_icons": [
