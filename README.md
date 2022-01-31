@@ -1,7 +1,7 @@
 <div align="center">
 	<p>
 		<a href="README.md">
-			<img src="icons/border-48.png" width="48" alt="Proxy Extension" />
+			<img src="icons/twotone_language_black_48dp.png" width="48" alt="Proxy Extension" />
 		</a>
 	</p>
 	<p>
