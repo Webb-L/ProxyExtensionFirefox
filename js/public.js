@@ -1,9 +1,9 @@
 let prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+console.log(prefersDarkMode);
 if (prefersDarkMode) {
     getElement("body").setAttribute("class", getElement("body").getAttribute("class") + " mdui-theme-layout-dark")
-    getElement(".mdui-toolbar").style.backgroundColor = "#303030"
-}else {
-    getElement(".mdui-toolbar").style.backgroundColor = "#fff"
+} else {
+    getElement("body").setAttribute("class", "mdui-loaded")
 }
 
 /**
