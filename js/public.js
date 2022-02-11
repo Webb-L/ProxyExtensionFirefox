@@ -3,7 +3,10 @@ console.log(prefersDarkMode);
 if (prefersDarkMode) {
     getElement("body").setAttribute("class", getElement("body").getAttribute("class") + " mdui-theme-layout-dark")
 } else {
+    console.log("11")
     getElement("body").setAttribute("class", "mdui-loaded")
+    getElement(".mdui-color-theme").style.backgroundColor = "#fff"
+    getElement("#pa3").style.display = "block"
 }
 
 /**
