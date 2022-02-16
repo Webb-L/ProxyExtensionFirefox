@@ -95,7 +95,7 @@ const Language = {
                     saveSuccess: "保存成功！",
                 },
             }
-        }
+        },
         "fa-IR": {
             public: {
                 cancel: "لغو",
