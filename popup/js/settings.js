@@ -49,7 +49,7 @@ getElement("#config_proxy").onclick = function () {
  */
 function initLanguage() {
     const language = Language
-    const lang = language.languages[navigator.language]
+    const lang = language.languages[browser.i18n.getUILanguage()] ? language.languages[browser.i18n.getUILanguage()] : language.languages[navigator.language]
     language.setTransition("title", lang.settings.title)
     language.setTransition(".mdui-typo-title", lang.settings.title)
     language.setTransition(".show-state", lang.settings.showState)

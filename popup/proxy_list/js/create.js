@@ -19,44 +19,45 @@ getElement("#save_config").onclick = () => {
     if (localStorage.getItem("list") === null) localStorage.setItem("list", "[]")
     const list = JSON.parse(localStorage.getItem("list"))
 
-    mdui.prompt(lang ? lang.popup.create.inputName : "Please enter a name",
-        function (value) {
-            if (value === "") {
-                mdui.snackbar({
-                    message: lang ? lang.popup.create.notNullName : "Name is required!",
-                    position: 'right-top'
-                });
-            } else if (value.length > 25) {
-                mdui.snackbar({
-                    message: lang ? lang.popup.create.nameMaxLength : "The length of the name cannot exceed 25 characters!",
-                    position: 'right-top'
-                });
-            } else {
-                config['name'] = value
-                config['id'] = new Date().getTime()
-                list.push(config)
-                localStorage.setItem("list", JSON.stringify(list))
-                mdui.snackbar({
-                    message: lang ? lang.popup.create.saveSuccess : "Saved successfully",
-                    position: 'right-top'
-                });
-                setInterval(() => {
-                    location.reload()
-                }, 1500)
-            }
+    mdui.prompt(lang ? lang.popup.create.inputName : "Please enter a name", function (value) {
+        if (value === "") {
+            mdui.snackbar({
+                message: lang ? lang.popup.create.notNullName : "Name is required!",
+                position: 'right-top'
+            });
+        } else if (value.length > 25) {
+            mdui.snackbar({
+                message: lang ? lang.popup.create.nameMaxLength : "The length of the name cannot exceed 25 characters!",
+                position: 'right-top'
+            });
+        } else {
+            config['name'] = value
+            config['id'] = new Date().getTime()
+            list.push(config)
+            localStorage.setItem("list", JSON.stringify(list))
+            mdui.snackbar({
+                message: lang ? lang.popup.create.saveSuccess : "Saved successfully",
+                position: 'right-top'
+            });
+            setInterval(() => {
+                location.reload()
+            }, 1500)
         }
-    );
+    }, ()=>{}, {
+        confirmText: lang ? lang.public.confirm : "OK",
+        cancelText: lang ? lang.public.cancel : "CANCEL"
+    })
 }
 
 /**
  * 初始化页面文字语言
  */
 const language = Language
-const lang = language.languages[navigator.language]
+const lang = language.languages[browser.i18n.getUILanguage()] ? language.languages[browser.i18n.getUILanguage()] : language.languages[navigator.language]
 
 function initTransition() {
     const language = Language
-    const lang = language.languages[navigator.language]
+    const lang = language.languages[browser.i18n.getUILanguage()] ? language.languages[browser.i18n.getUILanguage()] : language.languages[navigator.language]
     language.setTransition("title", lang.popup.create.title)
     language.setTransition(".mdui-typo-title", lang.popup.create.title)
     language.setTransitionPlaceholder(".autoConfigUrl", lang.popup.create.autoConfigUrl)

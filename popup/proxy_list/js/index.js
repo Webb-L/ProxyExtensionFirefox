@@ -3,7 +3,8 @@ const list = JSON.parse(localStorage.getItem("list"))
 const params = location.search.match(/page=\d+/)
 const page = params ? Number(params[0] ? params[0].split("=")[1] : 0) : 0
 list.reverse()
-const lang = Language.languages[navigator.language]
+const language = Language
+const lang = language.languages[browser.i18n.getUILanguage()] ? language.languages[browser.i18n.getUILanguage()] : language.languages[navigator.language]
 try {
     initLanguage();
 } catch (e) {
@@ -15,8 +16,6 @@ initFooter();
  * 初始化页面文字语言
  */
 function initLanguage() {
-    const language = Language
-    const lang = language.languages[navigator.language]
     language.setTransition("title", lang.popup.index.title)
     language.setTransition(".mdui-typo-title", lang.popup.index.title)
     language.setTransition(".name", lang.popup.index.name)

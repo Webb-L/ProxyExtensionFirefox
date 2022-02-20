@@ -144,7 +144,7 @@ function initManualConfigList() {
  */
 function initLanguage() {
     const language = Language
-    const lang = language.languages[navigator.language]
+    const lang = language.languages[browser.i18n.getUILanguage()] ? language.languages[browser.i18n.getUILanguage()] : language.languages[navigator.language]
     language.setTransition("title", lang.index.title)
     language.setTransition(".mdui-typo-title", lang.index.title)
     language.setTransition(".no_proxy", lang.index.list.no_proxy)

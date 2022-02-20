@@ -84,11 +84,11 @@ function initFrom() {
 }
 
 
-const lang = Language.languages[navigator.language]
+const lang = language.languages[browser.i18n.getUILanguage()] ? language.languages[browser.i18n.getUILanguage()] : language.languages[navigator.language]
 
 function initTransition() {
     const language = Language
-    const lang = language.languages[navigator.language]
+    const lang = language.languages[browser.i18n.getUILanguage()] ? language.languages[browser.i18n.getUILanguage()] : language.languages[navigator.language]
     language.setTransition("title", lang.popup.edit.title)
     language.setTransition(".mdui-typo-title", lang.popup.edit.title)
     language.setTransitionPlaceholder(".autoConfigUrl", lang.popup.edit.autoConfigUrl)
