@@ -9,21 +9,16 @@
     <link rel="stylesheet" href="/mdui/1.0.1/css/mdui.min.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
-<body>
-<header class="mdui-appbar mdui-m-b-2">
+<body class="mdui-appbar-with-toolbar mdui-p-b-5">
+<div class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide">
     <div class="mdui-toolbar mdui-color-theme">
         <a href="../index.html" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">arrow_back</i></a>
         <span class="mdui-typo-title">Manually configure the proxy list</span>
         <div class="mdui-toolbar-spacer"></div>
         <a href="create.html" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">add</i></a>
-        <!-- <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>
-         <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">vertical_align_top</i></a>
-         <div mdui-menu="{target: '#menu_item'}" class="mdui-btn mdui-btn-icon">
-             <i class="mdui-icon material-icons">more_vert</i>
-         </div>-->
     </div>
-</header>
-<main class="mdui-container-fluid">
+</div>
+<main class="mdui-container-fluid mdui-m-t-2 mdui-m-b-2">
     <div class="mdui-table-fluid">
         <table class="mdui-table mdui-table-hoverable">
             <thead>
@@ -49,7 +44,9 @@
     </div>
 </main>
 
-<footer class="mdui-m-t-1 mdui-m-b-1 mdui-m-l-1 mdui-m-r-1"></footer>
+<div class="mdui-appbar-fixed" style="bottom: 0;top: auto;">
+    <footer class="mdui-m-t-1 mdui-m-b-1 mdui-m-l-1 mdui-m-r-1"></footer>
+</div>
 
 <script src="/mdui/1.0.1/js/mdui.min.js"></script>
 <script src="/js/public.js"></script>
