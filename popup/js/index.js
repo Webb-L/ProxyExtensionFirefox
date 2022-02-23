@@ -1,5 +1,4 @@
 window.setProxy = json => browser.proxy.settings.set({value: json});
-
 try {
     initLanguage();
 } catch (e) {
@@ -143,12 +142,10 @@ function initManualConfigList() {
  * 初始化页面文字语言
  */
 function initLanguage() {
-    const language = Language
-    const lang = language.languages[browser.i18n.getUILanguage()] ? language.languages[browser.i18n.getUILanguage()] : language.languages[navigator.language]
-    language.setTransition("title", lang.index.title)
-    language.setTransition(".mdui-typo-title", lang.index.title)
-    language.setTransition(".no_proxy", lang.index.list.no_proxy)
-    language.setTransition(".auto_proxy", lang.index.list.auto_proxy)
-    language.setTransition(".system_proxy", lang.index.list.system_proxy)
-    language.setTransition(".config_proxy", lang.index.list.config_proxy)
+    Language.setTransition("title", lang.index.title)
+    Language.setTransition(".mdui-typo-title", lang.index.title)
+    Language.setTransition(".no_proxy", lang.index.list.no_proxy)
+    Language.setTransition(".auto_proxy", lang.index.list.auto_proxy)
+    Language.setTransition(".system_proxy", lang.index.list.system_proxy)
+    Language.setTransition(".config_proxy", lang.index.list.config_proxy)
 }

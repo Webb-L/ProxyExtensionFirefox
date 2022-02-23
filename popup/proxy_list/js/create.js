@@ -52,35 +52,30 @@ getElement("#save_config").onclick = () => {
 /**
  * 初始化页面文字语言
  */
-const language = Language
-const lang = language.languages[browser.i18n.getUILanguage()] ? language.languages[browser.i18n.getUILanguage()] : language.languages[navigator.language]
-
 function initTransition() {
-    const language = Language
-    const lang = language.languages[browser.i18n.getUILanguage()] ? language.languages[browser.i18n.getUILanguage()] : language.languages[navigator.language]
-    language.setTransition("title", lang.popup.create.title)
-    language.setTransition(".mdui-typo-title", lang.popup.create.title)
-    language.setTransitionPlaceholder(".autoConfigUrl", lang.popup.create.autoConfigUrl)
-    language.setTransitionPlaceholder(".autoConfigUrlDescription", lang.popup.create.autoConfigUrlDescription)
-    language.setTransition(".autoLogin", lang.popup.create.autoLogin)
-    language.setTransition(".autoLoginDescription", lang.popup.create.autoLoginDescription)
-    language.setTransitionPlaceholder(".ftp", lang.popup.create.ftp)
-    language.setTransitionPlaceholder(".ftpDescription", lang.popup.create.ftpDescription)
-    language.setTransitionPlaceholder(".http", lang.popup.create.http)
-    language.setTransitionPlaceholder(".httpDescription", lang.popup.create.httpDescription)
-    language.setTransition(".httpProxyAll", lang.popup.create.httpProxyAll)
-    language.setTransition(".httpProxyAllDescription", lang.popup.create.httpProxyAllDescription)
-    language.setTransitionPlaceholder(".passthrough", lang.popup.create.passthrough)
-    language.setTransitionPlaceholder(".passthroughDescription", lang.popup.create.passthroughDescription)
-    language.setTransition(".proxyDNS", lang.popup.create.proxyDNS)
-    language.setTransition(".proxyDNSDescription", lang.popup.create.proxyDNSDescription)
-    language.setTransitionPlaceholder(".socks", lang.popup.create.socks)
-    language.setTransitionPlaceholder(".socksDescription", lang.popup.create.socksDescription)
-    language.setTransitionPlaceholder(".socksVersion", lang.popup.create.socksVersion)
-    language.setTransitionPlaceholder(".socksVersionDescription", lang.popup.create.socksVersionDescription)
-    language.setTransitionPlaceholder(".ssl", lang.popup.create.ssl)
-    language.setTransitionPlaceholder(".sslDescription", lang.popup.create.sslDescription)
-    language.setTransition("#save_config", lang.popup.create.saveConfig)
+    Language.setTransition("title", lang.popup.create.title)
+    Language.setTransition(".mdui-typo-title", lang.popup.create.title)
+    Language.setTransitionPlaceholder(".autoConfigUrl", lang.popup.create.autoConfigUrl)
+    Language.setTransitionPlaceholder(".autoConfigUrlDescription", lang.popup.create.autoConfigUrlDescription)
+    Language.setTransition(".autoLogin", lang.popup.create.autoLogin)
+    Language.setTransition(".autoLoginDescription", lang.popup.create.autoLoginDescription)
+    Language.setTransitionPlaceholder(".ftp", lang.popup.create.ftp)
+    Language.setTransitionPlaceholder(".ftpDescription", lang.popup.create.ftpDescription)
+    Language.setTransitionPlaceholder(".http", lang.popup.create.http)
+    Language.setTransitionPlaceholder(".httpDescription", lang.popup.create.httpDescription)
+    Language.setTransition(".httpProxyAll", lang.popup.create.httpProxyAll)
+    Language.setTransition(".httpProxyAllDescription", lang.popup.create.httpProxyAllDescription)
+    Language.setTransitionPlaceholder(".passthrough", lang.popup.create.passthrough)
+    Language.setTransitionPlaceholder(".passthroughDescription", lang.popup.create.passthroughDescription)
+    Language.setTransition(".proxyDNS", lang.popup.create.proxyDNS)
+    Language.setTransition(".proxyDNSDescription", lang.popup.create.proxyDNSDescription)
+    Language.setTransitionPlaceholder(".socks", lang.popup.create.socks)
+    Language.setTransitionPlaceholder(".socksDescription", lang.popup.create.socksDescription)
+    Language.setTransitionPlaceholder(".socksVersion", lang.popup.create.socksVersion)
+    Language.setTransitionPlaceholder(".socksVersionDescription", lang.popup.create.socksVersionDescription)
+    Language.setTransitionPlaceholder(".ssl", lang.popup.create.ssl)
+    Language.setTransitionPlaceholder(".sslDescription", lang.popup.create.sslDescription)
+    Language.setTransition("#save_config", lang.popup.create.saveConfig)
 }
 
 function getElement(element, parent = document) {
