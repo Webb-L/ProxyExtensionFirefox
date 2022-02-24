@@ -16,7 +16,7 @@
   ],
   "browser_action": {
     "browser_style": true,
-    "default_icon": "icons/light.svg",
+    "default_icon": "icons/dark.svg",
     "default_title": "__MSG_extensionName__",
     "default_popup": "popup/index.html",
     "theme_icons": [
