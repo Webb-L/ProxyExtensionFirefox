@@ -8,7 +8,7 @@
     "description": "ProxyExtension"
   },
   "extensionDescription": {
-    "message": "The function of \"Proxy Extension\" is the same as the proxy function of Firefox, but \"Extension Extension\" can create multiple manually configured proxies to facilitate you to switch proxies.",
-    "description": "The function of \"Proxy Extension\" is the same as the proxy function of Firefox, but \"Extension Extension\" can create multiple manually configured proxies to facilitate you to switch proxies."
+    "message": "The function of \"ProxyExtension\" is the same as the proxy function of Firefox, but \"ProxyExtension\" can create multiple manually configured proxies to facilitate you to switch proxies.",
+    "description": "The function of \"ProxyExtension\" is the same as the proxy function of Firefox, but \"ProxyExtension\" can create multiple manually configured proxies to facilitate you to switch proxies."
   }
 }

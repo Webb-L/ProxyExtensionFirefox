@@ -83,35 +83,30 @@ function initFrom() {
     }
 }
 
-
-const lang = Language.languages[navigator.language]
-
 function initTransition() {
-    const language = Language
-    const lang = language.languages[navigator.language]
-    language.setTransition("title", lang.popup.edit.title)
-    language.setTransition(".mdui-typo-title", lang.popup.edit.title)
-    language.setTransitionPlaceholder(".autoConfigUrl", lang.popup.edit.autoConfigUrl)
-    language.setTransitionPlaceholder(".autoConfigUrlDescription", lang.popup.edit.autoConfigUrlDescription)
-    language.setTransition(".autoLogin", lang.popup.edit.autoLogin)
-    language.setTransition(".autoLoginDescription", lang.popup.edit.autoLoginDescription)
-    language.setTransitionPlaceholder(".ftp", lang.popup.edit.ftp)
-    language.setTransitionPlaceholder(".ftpDescription", lang.popup.edit.ftpDescription)
-    language.setTransitionPlaceholder(".http", lang.popup.edit.http)
-    language.setTransitionPlaceholder(".httpDescription", lang.popup.edit.httpDescription)
-    language.setTransition(".httpProxyAll", lang.popup.edit.httpProxyAll)
-    language.setTransition(".httpProxyAllDescription", lang.popup.edit.httpProxyAllDescription)
-    language.setTransitionPlaceholder(".passthrough", lang.popup.edit.passthrough)
-    language.setTransitionPlaceholder(".passthroughDescription", lang.popup.edit.passthroughDescription)
-    language.setTransition(".proxyDNS", lang.popup.edit.proxyDNS)
-    language.setTransition(".proxyDNSDescription", lang.popup.edit.proxyDNSDescription)
-    language.setTransitionPlaceholder(".socks", lang.popup.edit.socks)
-    language.setTransitionPlaceholder(".socksDescription", lang.popup.edit.socksDescription)
-    language.setTransitionPlaceholder(".socksVersion", lang.popup.edit.socksVersion)
-    language.setTransitionPlaceholder(".socksVersionDescription", lang.popup.edit.socksVersionDescription)
-    language.setTransitionPlaceholder(".ssl", lang.popup.edit.ssl)
-    language.setTransitionPlaceholder(".sslDescription", lang.popup.edit.sslDescription)
-    language.setTransition("#save_config", lang.popup.edit.saveConfig)
+    Language.setTransition("title", lang.popup.edit.title)
+    Language.setTransition(".mdui-typo-title", lang.popup.edit.title)
+    Language.setTransitionPlaceholder(".autoConfigUrl", lang.popup.edit.autoConfigUrl)
+    Language.setTransitionPlaceholder(".autoConfigUrlDescription", lang.popup.edit.autoConfigUrlDescription)
+    Language.setTransition(".autoLogin", lang.popup.edit.autoLogin)
+    Language.setTransition(".autoLoginDescription", lang.popup.edit.autoLoginDescription)
+    Language.setTransitionPlaceholder(".ftp", lang.popup.edit.ftp)
+    Language.setTransitionPlaceholder(".ftpDescription", lang.popup.edit.ftpDescription)
+    Language.setTransitionPlaceholder(".http", lang.popup.edit.http)
+    Language.setTransitionPlaceholder(".httpDescription", lang.popup.edit.httpDescription)
+    Language.setTransition(".httpProxyAll", lang.popup.edit.httpProxyAll)
+    Language.setTransition(".httpProxyAllDescription", lang.popup.edit.httpProxyAllDescription)
+    Language.setTransitionPlaceholder(".passthrough", lang.popup.edit.passthrough)
+    Language.setTransitionPlaceholder(".passthroughDescription", lang.popup.edit.passthroughDescription)
+    Language.setTransition(".proxyDNS", lang.popup.edit.proxyDNS)
+    Language.setTransition(".proxyDNSDescription", lang.popup.edit.proxyDNSDescription)
+    Language.setTransitionPlaceholder(".socks", lang.popup.edit.socks)
+    Language.setTransitionPlaceholder(".socksDescription", lang.popup.edit.socksDescription)
+    Language.setTransitionPlaceholder(".socksVersion", lang.popup.edit.socksVersion)
+    Language.setTransitionPlaceholder(".socksVersionDescription", lang.popup.edit.socksVersionDescription)
+    Language.setTransitionPlaceholder(".ssl", lang.popup.edit.ssl)
+    Language.setTransitionPlaceholder(".sslDescription", lang.popup.edit.sslDescription)
+    Language.setTransition("#save_config", lang.popup.edit.saveConfig)
 }
 
 function getElement(element, parent = document) {

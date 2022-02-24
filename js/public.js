@@ -1,5 +1,4 @@
 let prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-console.log(prefersDarkMode);
 if (prefersDarkMode) {
     getElement("body").setAttribute("class", getElement("body").getAttribute("class") + " mdui-theme-layout-dark")
 } else {

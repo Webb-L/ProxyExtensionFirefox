@@ -1,11 +1,12 @@
 {
   "manifest_version": 2,
-  "version": "1.0.7",
+  "version": "1.0.10",
   "author": "__MSG_authorName__",
   "name": "__MSG_extensionName__",
   "description": "__MSG_extensionDescription__",
+  "homepage_url": "https://github.com/Webb-L/ProxyExtensionFirefox",
   "icons": {
-    "48": "icons/twotone_language_black_48dp.png"
+    "48": "icons/icon.svg"
   },
   "permissions": [
     "activeTab",
@@ -15,16 +16,19 @@
   ],
   "browser_action": {
     "browser_style": true,
-    "default_icon": "icons/twotone_language_black_48dp.png",
+    "default_icon": "icons/light.svg",
     "default_title": "__MSG_extensionName__",
     "default_popup": "popup/index.html",
     "theme_icons": [
       {
-        "dark": "icons/twotone_language_black_48dp.png",
-        "light": "icons/twotone_language_white_48dp.png",
+        "dark": "icons/dark.svg",
+        "light": "icons/light.svg",
         "size": 32
       }
     ]
+  },
+  "options_ui": {
+    "page": "popup/settings.html"
   },
   "browser_specific_settings": {
     "gecko": {

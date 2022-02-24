@@ -1,12 +1,15 @@
 <div align="center">
 	<p>
 		<a href="README.md">
-			<img src="docs/images/Logo.svg" width="128" alt="Proxy Extension" />
+			<img src="icons/icon.svg" width="128" alt="ProxyExtension" />
 		</a>
 	</p>
 	<p>
 		<b>
-			Proxy Extension
+			ProxyExtension
+		</b>
+		<b>
+			The function of "ProxyExtension" is the same as the proxy function of Firefox, but "ProxyExtension" can create multiple manually configured proxies to facilitate you to switch proxies.
 		</b>
 	</p>
 	<a href="https://addons.mozilla.org/en-US/firefox/addon/proxyextension/">

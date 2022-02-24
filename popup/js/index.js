@@ -1,5 +1,4 @@
 window.setProxy = json => browser.proxy.settings.set({value: json});
-
 try {
     initLanguage();
 } catch (e) {
@@ -25,9 +24,37 @@ initManualConfigList();
 
 getElement("#manual").style.display = modeShowState.config_proxy ? "flex" : "none"
 getElement("#manual_list").style.display = modeShowState.config_proxy ? "block" : "none"
+
+function setConfigProxy(index) {
+    let proxySettings = list[index]
+    proxySettings["proxyType"] = "manual"
+    delete proxySettings["name"]
+    delete proxySettings["id"]
+    delete proxySettings["use"]
+    window.setProxy(proxySettings)
+    localStorage.setItem("use", "manual")
+}
+
 getElement("#manual").onclick = function () {
     const input = getElement("input", this)
     input.checked = !input.checked
+    if (input.checked) {
+        const checkId = localStorage.getItem("id")
+        if (checkId) {
+            setConfigProxy(checkId);
+            document.querySelectorAll("#manual_list input").forEach(ele => {
+                if (ele.value === checkId) {
+                    ele.checked = true
+                }
+            })
+        }
+    } else {
+        localStorage.setItem("use", "none")
+        window.setProxy({proxyType: "none"})
+        getElement('[value="none"]').checked = true
+        getElement("#manual_list")
+            .setAttribute("class", "mdui-hidden")
+    }
     getElement("#manual_list").setAttribute("class", input.checked ? "" : "mdui-hidden")
 }
 
@@ -38,12 +65,7 @@ document.querySelectorAll("#manual_list .item").forEach(ele => {
     ele.onclick = () => {
         if (input.checked) return
         input.checked = !input.checked
-        let proxySettings = list[input.value]
-        proxySettings["proxyType"] = "manual"
-        delete proxySettings["name"]
-        delete proxySettings["id"]
-        delete proxySettings["use"]
-        window.setProxy(proxySettings)
+        setConfigProxy(input.value)
         localStorage.setItem("use", "manual")
         localStorage.setItem("id", input.value)
     }
@@ -54,7 +76,6 @@ document.querySelectorAll("#manual_list .item").forEach(ele => {
 document.querySelectorAll("li.item").forEach((ele, index) => {
     const input = getElement("input", ele)
     input.checked = localStorage.getItem("use") === input.value
-    console.log(modeShowState);
     switch (index) {
         case 0:
             ele.style.display = modeShowState.no_proxy ? "flex" : "none"
@@ -69,9 +90,10 @@ document.querySelectorAll("li.item").forEach((ele, index) => {
 
     ele.onclick = () => {
         input.checked = true
-        let proxySettings = {proxyType: input.value};
-
-        window.setProxy(proxySettings)
+        getElement("#manual_list")
+            .setAttribute("class", "mdui-hidden")
+        getElement("#manual input").checked = false
+        window.setProxy({proxyType: input.value})
         localStorage.setItem("use", input.value)
     }
 })
@@ -120,12 +142,10 @@ function initManualConfigList() {
  * 初始化页面文字语言
  */
 function initLanguage() {
-    const language = Language
-    const lang = language.languages[navigator.language]
-    language.setTransition("title", lang.index.title)
-    language.setTransition(".mdui-typo-title", lang.index.title)
-    language.setTransition(".no_proxy", lang.index.list.no_proxy)
-    language.setTransition(".auto_proxy", lang.index.list.auto_proxy)
-    language.setTransition(".system_proxy", lang.index.list.system_proxy)
-    language.setTransition(".config_proxy", lang.index.list.config_proxy)
+    Language.setTransition("title", lang.index.title)
+    Language.setTransition(".mdui-typo-title", lang.index.title)
+    Language.setTransition(".no_proxy", lang.index.list.no_proxy)
+    Language.setTransition(".auto_proxy", lang.index.list.auto_proxy)
+    Language.setTransition(".system_proxy", lang.index.list.system_proxy)
+    Language.setTransition(".config_proxy", lang.index.list.config_proxy)
 }

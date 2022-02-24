@@ -95,7 +95,7 @@ const Language = {
                     saveSuccess: "保存成功！",
                 },
             }
-        }
+        },
         "fa-IR": {
             public: {
                 cancel: "لغو",
@@ -200,3 +200,19 @@ const Language = {
         document.querySelector(ele).placeholder = message
     }
 }
+
+let lang
+browser.i18n.getAcceptLanguages().then(data => {
+    data.push(browser.i18n.getUILanguage())
+    data.push(navigator.language)
+    for (let languagesKey in Language.languages) {
+        for (let dataKey in data) {
+            console.log(data[dataKey].toLowerCase(), languagesKey.toLowerCase(), data[dataKey].toLowerCase() === languagesKey.toLowerCase());
+            if (data[dataKey].toLowerCase() === languagesKey.toLowerCase()) {
+                lang = Language.languages[languagesKey]
+                console.log(lang);
+                return;
+            }
+        }
+    }
+})

@@ -3,7 +3,6 @@ const list = JSON.parse(localStorage.getItem("list"))
 const params = location.search.match(/page=\d+/)
 const page = params ? Number(params[0] ? params[0].split("=")[1] : 0) : 0
 list.reverse()
-const lang = Language.languages[navigator.language]
 try {
     initLanguage();
 } catch (e) {
@@ -15,23 +14,21 @@ initFooter();
  * 初始化页面文字语言
  */
 function initLanguage() {
-    const language = Language
-    const lang = language.languages[navigator.language]
-    language.setTransition("title", lang.popup.index.title)
-    language.setTransition(".mdui-typo-title", lang.popup.index.title)
-    language.setTransition(".name", lang.popup.index.name)
-    language.setTransition(".isShow", lang.popup.index.isShow)
-    language.setTransition(".autoConfigUrl", lang.popup.index.autoConfigUrl)
-    language.setTransition(".autoLogin", lang.popup.index.autoLogin)
-    language.setTransition(".ftp", lang.popup.index.ftp)
-    language.setTransition(".http", lang.popup.index.http)
-    language.setTransition(".httpProxyAll", lang.popup.index.httpProxyAll)
-    language.setTransition(".passthrough", lang.popup.index.passthrough)
-    language.setTransition(".proxyDNS", lang.popup.index.proxyDNS)
-    language.setTransition(".socks", lang.popup.index.socks)
-    language.setTransition(".socksVersion", lang.popup.index.socksVersion)
-    language.setTransition(".ssl", lang.popup.index.ssl)
-    language.setTransition(".action", lang.popup.index.action)
+    Language.setTransition("title", lang.popup.index.title)
+    Language.setTransition(".mdui-typo-title", lang.popup.index.title)
+    Language.setTransition(".name", lang.popup.index.name)
+    Language.setTransition(".isShow", lang.popup.index.isShow)
+    Language.setTransition(".autoConfigUrl", lang.popup.index.autoConfigUrl)
+    Language.setTransition(".autoLogin", lang.popup.index.autoLogin)
+    Language.setTransition(".ftp", lang.popup.index.ftp)
+    Language.setTransition(".http", lang.popup.index.http)
+    Language.setTransition(".httpProxyAll", lang.popup.index.httpProxyAll)
+    Language.setTransition(".passthrough", lang.popup.index.passthrough)
+    Language.setTransition(".proxyDNS", lang.popup.index.proxyDNS)
+    Language.setTransition(".socks", lang.popup.index.socks)
+    Language.setTransition(".socksVersion", lang.popup.index.socksVersion)
+    Language.setTransition(".ssl", lang.popup.index.ssl)
+    Language.setTransition(".action", lang.popup.index.action)
 }
 
 /**
