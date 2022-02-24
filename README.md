@@ -8,14 +8,13 @@
 		<b>
 			ProxyExtension
 		</b>
-		<b>
+	</p>
+	<p>
 			The function of "ProxyExtension" is the same as the proxy function of Firefox, but "ProxyExtension" can create multiple manually configured proxies to facilitate you to switch proxies.
-		</b>
 	</p>
 	<a href="https://addons.mozilla.org/en-US/firefox/addon/proxyextension/">
 		<img src="https://img.shields.io/amo/v/proxyextension.svg" alt="mozilla add-on" />
 	</a>
-	<br>
 	<a href="LICENSE">
 		<img src="https://img.shields.io/github/license/Webb-L/ProxyExtensionFirefox" alt="license" />
 	</a>	
