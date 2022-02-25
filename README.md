@@ -1,45 +1,32 @@
 <div align="center">
-	<p>
-		<a href="README.md">
-			<img src="icons/icon.svg" width="128" alt="ProxyExtension" />
+	<h3>
+		<a href="README.md#proxyextension">
+			<img src="icons/icon.svg" width="128" alt="🌐" style="display: block;" />
 		</a>
-	</p>
-	<p>
-		<b>
-			ProxyExtension
-		</b>
-	</p>
-	<a href="LICENSE">
-		<img src="https://img.shields.io/github/license/Webb-L/ProxyExtensionFirefox" alt="license" />
-	</a>
+		<br>
+		ProxyExtension
+	</h3>
+	Can create multiple manually configured proxies to facilitate you to switch proxies
 	<br>
 	<br>
-	<p>
-		<b>
-			Description
-		</b>
-	</p>
-	<p>
-			The function of "ProxyExtension" is the same as the proxy function of Firefox, but "ProxyExtension" can create multiple manually configured proxies to facilitate you to switch proxies.
-	</p>
-	<br>
-	<p>
-		<b>
-			Download
-		</b>
-	</p>
+	<h3>
+		📥 Download
+	</h3>
 	<a href="https://addons.mozilla.org/en-US/firefox/addon/proxyextension/">
-		<img src="https://img.shields.io/amo/v/proxyextension.svg" alt="mozilla add-on" />
+		<img src="https://img.shields.io/amo/v/proxyextension.svg?style=for-the-badge" alt="mozilla add-on" />
 	</a>
+	<br>
 	<a href="https://github.com/Webb-L/ProxyExtensionFirefox/releases/">
-		<img src="https://img.shields.io/github/v/release/Webb-L/ProxyExtensionFirefox" />
+		<img src="https://img.shields.io/github/v/release/Webb-L/ProxyExtensionFirefox?style=for-the-badge" />
 	</a>
 	<br>
 	<br>
-	<p>
-		<b>
-			User Manual
-		</b>
-	</p>
-	<a href="docs/README-CN.md">中文</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp<a href="docs/README-FA.md">فارسی</a>
+	<h3>
+		📚 Docs
+	</h3>
+	<a href="docs/README-CN.md">中文</a>
+	<br>
+		<a href="docs/README-FA.md">فارسی</a>
+	<br>
+	<br>
 </div>
