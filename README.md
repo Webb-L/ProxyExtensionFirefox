@@ -24,9 +24,13 @@
 	<h3>
 		📚 Docs
 	</h3>
-	<a href="docs/README-CN.md">中文</a>
+	<a href="docs/README-CN.md">
+		<img src="https://img.shields.io/badge/-Chinese-blue?style=for-the-badge" />
+	</a>	
 	<br>
-		<a href="docs/README-FA.md">فارسی</a>
+	<a href="docs/README-CN.md">
+		<img src="https://img.shields.io/badge/-Persian-blue?style=for-the-badge" />
+	</a>
 	<br>
 	<br>
 </div>
