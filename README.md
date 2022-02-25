@@ -28,7 +28,7 @@
 		<img src="https://img.shields.io/badge/-Chinese-blue?style=for-the-badge" />
 	</a>	
 	<br>
-	<a href="docs/README-CN.md">
+	<a href="docs/README-FA.md">
 		<img src="https://img.shields.io/badge/-Persian-blue?style=for-the-badge" />
 	</a>
 	<br>
