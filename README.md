@@ -16,7 +16,7 @@
 		<img src="https://img.shields.io/amo/v/proxyextension.svg?style=for-the-badge" alt="mozilla add-on" />
 	</a>
 	<br>
-	<a href="https://github.com/Webb-L/ProxyExtensionFirefox/releases/">
+	<a href="https://github.com/Webb-L/ProxyExtensionFirefox/releases/latest">
 		<img src="https://img.shields.io/github/v/release/Webb-L/ProxyExtensionFirefox?style=for-the-badge" />
 	</a>
 	<br>
