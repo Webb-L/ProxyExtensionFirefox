@@ -1,0 +1,10 @@
+{
+  "name": "proxy_extension",
+  "version": "1.0.0",
+  "scripts": {
+    "run": "web-ext run",
+    "build": "web-ext build -i=images -i=README.md -i=LICENSE -i=.gitignore -i=.git -i=.idea -i=web-ext-artifacts -i=docs"
+  },
+  "dependencies": {
+  }
+}
